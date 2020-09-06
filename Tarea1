@@ -1,0 +1,103 @@
+# #ejercicio 1
+x = 4<2
+
+print(type(x))
+
+# #ejercicio 2
+y = input("Ingrese un nombre")
+
+print("Bienvenido " + y)
+
+# #ejercicio 3
+z = int(input("Ingrese un numero "))
+
+if z % 2 == 0:
+    print("El numero", z, "es par")
+else:
+    print("El numero", z, "es impar")
+
+# #ejercicio 4
+a = int(input("Ingrese un numero para el ejercicio 4: "))
+b = int(input("Ingrese otro numero para el ejercicio 4: "))
+
+if a > b:
+    print("El numero", a, "es mayor que", b)
+else:
+    print("El numero", a, "no es mayor que", b)
+
+# #ejercicio 5 
+c = int(input("Ingrese pesos para convertir a dolares "))
+d = int(input("ingrese la tasa del dia "))
+print("La cantidad en dolares es: ", c/d)
+
+# #ejercicio 6
+e = int(input("Ingrese grados Celcius"))
+f = ((e * 1.8) + 32)
+
+print("Los grados ", e, "Celius a Fahrenheit son ", f)
+
+#ejericico 7
+g = int(input("Ingrese calificacion: "))
+h = int(input("Ingrese calificacion: "))
+i = int(input("Ingrese calificacion: "))
+j = int(input("Ingrese calificacion: "))
+
+k = ((g + h + i + j)/4)
+
+print("Las calificaciones son:")
+if g >= 90:
+    print(g ,"A")
+elif g >= 80:
+    print(g , "B")
+elif g >= 70:
+    print(g , "c")
+elif g >= 60:
+    print(g , "D")
+else:
+    print(g , "F")
+
+if h >= 90:
+    print(h ,"A")
+elif h >= 80:
+    print(h , "B")
+elif h >= 70:
+    print(h , "c")
+elif h >= 60:
+    print(h , "D")
+else:
+    print(h , "F")
+
+if i >= 90:
+    print(i ,"A")
+elif i >= 80:
+    print(i , "B")
+elif i >= 70:
+    print(i , "c")
+elif i >= 60:
+    print(i , "D")
+else:
+    print(i , "F")
+
+if j >= 90:
+    print(j ,"A")
+elif j >= 80:
+    print(j , "B")
+elif j >= 70:
+    print(j , "c")
+elif j >= 60:
+    print(j , "D")
+else:
+    print(j , "F")
+
+print("con un promedio de: ", k)
+
+#ejercicio 8
+n1 = int(input("Ingrese monto del prestamo: "))
+n2 = int(input("Ingrese numero de cuotas: "))
+n3 = float(input("Ingrese porcentaje de interes:"))
+
+nm = n1 * ((n3 * ((1 + n3)**n2)) / (((1 + n3)**n2) - 1)) #cuota mensual
+
+print("Cuota mensual: ", nm)
+
+print("cuota amortizada", nm - (n1 * n3))
