@@ -1,0 +1,125 @@
+#ejercicio 1
+x = int(input("Ingrese un numero: "))
+a = []
+
+while x != 0:
+    a.append(x)
+    x = int(input("Ingrese un numero: "))
+    
+
+print ("Ha marcado 0 ","sus intentos fueron",a ,"la suma totoal es: ", sum(a)) 
+
+#ejercicio 2
+
+print("Elija una opcion: 1: convertir de Celcius a Fahrenheit, 2: convertir de dolares a pesos, 3: convertir de metros a pies 0: Salir ")
+
+y = int(input())
+
+while y != 0:
+    if y == 1:
+        y1 = int(input("ingrece los grados celcius: ")) 
+        print("La conversion es: ", ((y1 * 1.8) + 32))
+        
+
+    elif y == 2:
+        y2 = int(input("ingrece monto a convertir a pesos: ")) 
+        print(y2, "Son", (y2 * 60), "en dolares")
+        
+
+    else:
+        y3 = int(input("ingrece para la conversion a pies: ")) 
+        print(y3, "equivalen a:", (y3*3.2808, "pies"))
+    
+    y = int(input("Elija una opcion: 1: convertir de Celcius a Fahrenheit, 2: convertir de dolares a pesos, 3: convertir de metros a pies 0: Salir "))
+        
+
+print("Adios")
+
+#ejercicio 3
+for x in range(0, 1001, 5):
+    c = 1
+
+    while c <= 12:
+        res = x * c
+        print(f"{x} X {c} = {res}")
+        c += 1
+
+#ejercicio 4
+Suel = int(input("Ingrese su sueldo: "))
+AFP = 0.0287 * 12
+SFS = 0.0304 * 12
+suelA = Suel*12
+top1 = 416220
+top2 = 624329
+top3 = 867123
+isr = 0
+
+
+if suelA <= top1:
+    isr = suelA *AFP *SFS
+elif suelA <= top2:
+    excendente = suelA - top1
+    isr = excendente * 0.15 *AFP *SFS
+elif suelA <= top3:
+    excendente = suelA - top2
+    isr = 312116 + (excendente * 0.15 *AFP *SFS)
+else:
+    excendente = suelA - top3
+    isr = 79776 + (excendente * 0.25 *AFP *SFS)
+
+print(isr/12)
+
+#Ejercicio 5
+
+carga1000 = 1000
+carga500 = 500
+carga100 = 100
+ 
+def sacar_dinero(cantidad):
+  global carga1000, carga500, carga100
+  if cantidad <= 1000 * carga1000 + 500 * carga500 + 100 * carga100:
+ 
+    de1000 = int(cantidad / 1000)
+    cantidad = cantidad % 1000
+    if de1000 >= carga1000: 
+      cantidad = cantidad + (de100 - carga1000) * 1000
+      de1000 = carga1000
+ 
+    de500 = int(cantidad / 500)
+    cantidad = cantidad % 500
+    if de500 >= carga500: 
+      cantidad = cantidad + (de500 - carga500) * 500
+      de500 = carga500
+ 
+    de100 = int(cantidad / 100)
+    cantidad = cantidad % 100
+    if de100 >= carga100: 
+      cantidad = cantidad + (de100 - carga100) * 100
+      de100 = carga100
+ 
+    if cantidad == 0:
+      carga1000 = carga1000 - de1000
+      carga500 = carga500 - de500
+      carga100 = carga100 - de100
+      return [de1000, de500, de100]
+    else: 
+      return [0, 0, 0]
+  else:
+    return [-1, -1, -1]
+ 
+try:
+    c = int(input('Cantidad a extraer: '))
+    if c < 10000:
+        print("Monto excede al extablecido para retirar")
+    else:
+        resultado=sacar_dinero(c)
+        if resultado==[0,0,0]:
+            print ('No hay desglose de billetes para su importe')
+        elif resultado==[-1,-1,-1]:
+            print ('No hay suficientes billetes')
+        else:
+            print ('Billetes de 1000:', resultado[0])
+            print ('Billetes de 500:', resultado[1])
+            print ('Billetes de 100:', resultado[2])
+except:
+    print ('Importe incorrecto')
