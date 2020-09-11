@@ -71,59 +71,37 @@ print(isr/12)
 
 #Ejercicio 5
 
-caja1 = 1000
-caja2 = 500
-caja3 = 100
+def dividir():
+    print("Seleccione un banco: a)ABC b)DEF: ")
+    b1 = input()
 
-print("Favor seleccione banco con el cual desea realizar retiro: a) ABC b) DEF c)GHI ")
+    if b1 == "a":
+        entregar = int(input("Digite monto a devitar: "))
+        gaveta = [1000, 500, 100]
+        for i in range(len(gaveta)):
+            b = entregar / gaveta[i]
 
-Banco = input()
+            if entregar > 10000:
+                print("Limite transaccional es de: RD$10000")
+                break
 
-if Banco == "a":
-    print("Selecciono banco ABC")
-    cantidad = int(input("Ingrese monto a retirar: "))
-    if cantidad > 10000:
-        print("Cantidad supera al monto maximo por transaccion")
-    else:
-        if cantidad <= 900:
-    
-            print(cantidad, " Billetes de 100")
+            elif b > 0:
+                print(int(b), "billetes", gaveta[i])
+                entregar %= gaveta[i]
 
-        elif cantidad <= 500:
-            print(cantidad + " Billetes de 500")
+    if b1 == "b":
+        entregar = int(input("Digite monto a devitar: "))
+        gaveta = [1000, 500, 100]
 
-        else:
-            print(cantidad + " Billetes de 1000")
+        for i in range(len(gaveta)):
+            b = entregar / gaveta[i]
 
-elif Banco == "b":
-    print("Selecciono banco DEF")
-    cantidad = int(input("Ingrese monto a retirar: "))
-    if cantidad > 2000:
-        print("Cantidad supera al monto maximo por transaccion")
-    else:
-        if cantidad <= 900:
-        
-            print(cantidad, " Billetes de 100")
+            if entregar > 2000:
+                print("Limite transaccional es de: RD$2000")
+                break
+            
+            elif b > 0:
+                print(int(b), "billetes", gaveta[i])
+                entregar %= gaveta[i]
 
-        elif cantidad <= 500:
-            print(cantidad + " Billetes de 500")
-
-        else:
-            print(cantidad + " Billetes de 1000")
-
-else:
-    print("Selecciono banco GHI")
-
-    cantidad = int(input("Ingrese monto a retirar: "))
-    if cantidad > 2000:
-        print("Cantidad supera al monto maximo por transaccion")
-    else:
-        if cantidad <= 900:
-        
-            print(cantidad, " Billetes de 100")
-
-        elif cantidad <= 500:
-            print(cantidad + " Billetes de 500")
-
-        else:
-            print(cantidad + " Billetes de 1000")
+dividir()
