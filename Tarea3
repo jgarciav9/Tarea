@@ -1,0 +1,116 @@
+# Ejercicio 1
+
+x = int(input("numero base: "))
+y = int(input("numero potencia: "))
+
+def potencia(x, y):
+    print (x ** y)
+
+potencia(x,y)
+
+#Ejercicio 2
+
+a = ["cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez"]
+z = int(input("ingrese un numero: "))
+
+def convertir(z):
+    if z < 11:
+        print("el numero ", z, "en letras se escribe: ", a[z])
+        
+    else:
+        print("Solo se acepta valores del 1 al 10")
+
+convertir(z)
+
+#Ejercicio 3
+
+año = int(input("ingrese año: "))
+
+def retorna (año):
+    if año % 4 == 0:
+        if año % 100 == 0:
+            if año % 400 == 0:
+                print("El año es bisiesto")
+            else:
+                print("El año no es bisiesto")
+        else:
+            print("El año es bisiesto")
+    else:
+        print("El año no es bisiesto")
+
+retorna(año)
+
+#Ejercicio 4
+
+n1 = int(input("Ingrese un numero: "))
+n2 = int(input("Ingrese otrot numero: "))
+
+def iguales(n1, n2):
+    if n1 == n2:
+        print(n1, "y", n2, "Son iguales")
+    else:
+        print(n1, "y", n2, "No son iguales")
+
+iguales(n1,n2)
+
+#Ejercicio 5
+def isPalindrome(numero):
+    if str(numero) == str(numero)[::-1]:
+        return True
+    else:
+        return False
+maxpalindrome =1
+for numero1 in range(100,999):
+    for numero2 in range(100,999):
+        producto = numero1 * numero2 
+        if isPalindrome(producto):
+            if producto > maxpalindrome:
+                maxpalindrome = producto
+                maxnum1 = numero1
+                maxnum2 = numero2
+print(maxpalindrome,maxnum1,maxnum2)
+
+Ejericico 6
+
+cedula = input("Ingrese cedula sin guiones: ")
+ced = len(cedula)
+
+def cedula(ced):
+    if ced != 11:
+        print("El numero de cedula es incorrecto")
+    else:
+        print("El numero de cedula es correcto")
+
+cedula(ced)
+
+Ejercicio 7
+
+x = int(input("Ingrese un numero: "))
+a = []
+
+def multiplicar (x):
+    while x != 0:
+        a.append(x)
+        a.append(x)
+        x = int(input("Ingrese un numero: "))
+    print (a) 
+
+
+multiplicar(x)
+
+#Ejercicio 8
+u = int(input("Ingrese numero inicial: "))
+i = int(input("Ingrese numero final: "))
+
+def tabla(u,i):
+    if u % 6 == 0:
+        for x in range(u, i, 6):
+            c = 1
+            while c <= 12:
+                res = x * c
+                print(f"{x} X {c} = {res}")
+                c += 1
+    else:
+        print("El primer digito debe ser divisible por 6")
+
+tabla(u,i)
