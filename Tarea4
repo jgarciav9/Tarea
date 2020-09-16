@@ -1,0 +1,93 @@
+#Ejercicio1
+
+class Tv:
+    def __init__(self, Marca, Pantalla, Control):
+        self.Marca = Marca
+        self.Pantalla = Pantalla
+        self.Control = Control
+
+TCL = Tv("TCL", "30", "si")
+
+print(TCL.Pantalla)
+
+class Abanico:
+    def __init__(self, Marca, Velocidades, Parado):
+        self.Marca = Marca
+        self.Velocidades = Velocidades
+        self.Parado = Parado
+
+Daiwa = Abanico("Daiwa", "3 Velocidades", "Es de pared")
+
+print(Daiwa.Marca, Daiwa.Velocidades)
+
+class telefono:
+    def __init__(self,tipo,rango,callback):
+        self.tipo = tipo
+        self.rango = rango
+        self.callback = callback
+
+tell = telefono("Inalambrico", "2 metros", "Si")
+
+print(tell.tipo)
+
+#ejercicio2
+
+class Estudiante:
+    def __init__(self, promedio):
+        self.promedio = promedio
+        if promedio > 100:
+            print ("El promedio maximo es de 100")
+        else:
+            print("Su promedio es de: ", promedio)
+
+Juan = Estudiante(100)
+
+#ejercicio3
+
+class suma:
+    def __init__(self, primero, segundo):
+        self.primero = primero
+        self.segundo = segundo
+        resultado = primero + segundo
+        print (resultado)
+
+class resta:
+    def __init__(self, primero1, segundo2):
+        self.primero1 = primero1
+        self.segundo2 = segundo2
+        resultadores = primero1 - segundo2
+        print(resultadores)
+
+class mult:
+    def __init__(self, mult1, mult2):
+        self.mult1 = mult1
+        self.mult2 = mult2
+        resultmult = mult1 * mult2
+        print(resultmult)
+
+class div:
+    def __init__(self, div1, div2):
+        self.div1 = div1
+        self.div2 = div2
+        resdiv = div1 / div2
+        print(resdiv)
+
+sum = suma(2,3)
+res = resta(7,4)
+multiplicacion = mult(2,5)
+division = div(2,3)
+
+#ejercicio4
+
+class personaje:
+    def __init__(self, arriba, abajo, derecha, izquierda):
+        self.arriba = arriba
+        self.abajo = abajo
+        self.derecha = derecha
+        self.izquierda = izquierda
+
+class Mario(personaje):
+    pass
+
+class Koopa(personaje):
+    pass
