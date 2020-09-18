@@ -91,3 +91,31 @@ class Mario(personaje):
 
 class Koopa(personaje):
     pass
+
+#ejericico 6
+
+class Car:
+    Gasolina = 10
+    Kilometros = 0
+    
+    def turnOn(self):
+        Tanque = self.Gasolina - 1
+        for i in range(0, self.Gasolina): 
+            self.Kilometros+=3
+            Tanque-=1
+            print("Kilometros: ", self.Kilometros)
+            print("Gasolina Restantes: ", Tanque)
+            if Tanque == -1:
+                print("Tanque Vacio")
+            
+                
+                
+    def turnOff(self):
+        if self.Gasolina == 0: 
+            self.Kilometros += 0
+            print("Kilometros: ", self.Kilometros)
+            print("Carro se apaga")
+
+car = Car()
+
+car.turnOn()
